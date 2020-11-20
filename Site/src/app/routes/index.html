@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+    <script src="/script.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Home</title>
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper menu-personal-configs text-black">
+          <a href="#!" class="brand-logo logo-bold">Peaky Pay</a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="#"><i class="Medium material-icons" id="market">local_grocery_store</i></a></li>
+            <li><a class="dropdown-trigger" href="#!" data-target="dropdown1"><i class="fas fa-caret-down" id="arrow"></i></a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="side-products" id="side-list">
+        <div class="action-buttons">
+          <button class="waves-effect waves-light btn-large red darken-3">Cancelar</button>
+          <button class="waves-effect waves-light btn-large light-blue darken-1">Comprar</button>
+        </div>
+      </div>
+    
+      <ul class="sidenav" id="mobile-demo">
+        <li><a href="sass.html">Login</a></li>
+        <li><a href="badges.html">Register</a></li>
+        <li><a href="collapsible.html">Dark Mode</a></li>
+      </ul>
+
+      <div class="dropdown-arrow" id="dropdown-options">
+        <div class="box">
+          <p class="dark-mode">Dark Mode</p>
+          <div class="switch">
+            <label>
+              Off
+              <input type="checkbox">
+              <span class="lever"></span>
+              On
+            </label>
+          </div>
+        </div>
+        <div class="box">
+          <button class="waves-effect waves-light btn-small green accent-3">Login</button>
+          <button class="waves-effect waves-light btn-small grey darken-1">Register</button>
+        </div>
+      </div>
+      
+
+
+      <script src="menu.js"></script>
+      <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,600;0,700;0,800;1,400&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+body {
+  background-color: aliceblue;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100vh;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body .menu-personal-configs {
+  background-color: #E0E0E0;
+  padding: 0px 10px;
+  -webkit-box-shadow: 0px;
+          box-shadow: 0px;
+}
+
+body .menu-personal-configs a {
+  color: black;
+}
+
+body .menu-personal-configs .logo-bold {
+  font-weight: 700;
+}
+
+body .dropdown-arrow {
+  width: 200px;
+  height: 150px;
+  background-color: #E0E0E0;
+  position: absolute;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin-top: 65px;
+  display: none;
+  opacity: 0;
+}
+
+body .dropdown-arrow .box {
+  width: 100%;
+  height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  place-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .dropdown-arrow .box:nth-child(2) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+body .dropdown-arrow .box button {
+  margin: 1px;
+}
+
+body .on {
+  display: block;
+  opacity: 1;
+}
+
+body .side-products {
+  background-color: #E0E0E0;
+  width: 20em;
+  height: 92vh;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  display: none;
+  position: relative;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+body .side-products .action-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 10px;
+  margin-top: 195%;
+}
+
+body .side-products .action-buttons button {
+  margin: 3px;
+}
+
+body .view {
+  display: block;
+}
+
+@media (max-width: 992px) {
+  body .view, body .on {
+    display: none;
+  }
+}
+/*# sourceMappingURL=style.css.map */
