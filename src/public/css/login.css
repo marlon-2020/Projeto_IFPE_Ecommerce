@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,600;0,700;0,800;1,400&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  place-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #E0E0E0;
+  width: 20rem;
+  height: 60vh;
+}
+
+body form h1 {
+  margin-bottom: 40px;
+  color: #323232;
+}
+
+body form p {
+  padding: 10px;
+}
+
+body form p input {
+  width: 15em;
+  height: 5vh;
+  outline: none;
+  padding: 5px;
+  border: none;
+  font-size: 15pt;
+}
+
+body form p input:focus {
+  border: 2px solid #323232;
+}
+
+body form p button {
+  width: 7em;
+  height: 5vh;
+  font-size: 15pt;
+  font-weight: bold;
+  color: #323232;
+  border: 2px solid #323232;
+  cursor: pointer;
+}
+
+body form p button:hover {
+  background-color: #323232;
+  color: #f2f2f2;
+}
+
+body form div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body form div a {
+  font-size: .8em;
+  font-weight: bold;
+  text-decoration: none;
+  color: #323232;
+}
+
+body form div a:hover {
+  color: black;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+body form ::-webkit-input-placeholder {
+  color: #8a8585;
+}
+
+@media (max-width: 500px) {
+  body form {
+    width: 100%;
+    height: 100vh;
+  }
+}
+/*# sourceMappingURL=login.css.map */

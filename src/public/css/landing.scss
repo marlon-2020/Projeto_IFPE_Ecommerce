@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,600;0,700;0,800;1,400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+body {
+    min-width: 100%;
+    min-height: 100vh;
+    .menuBg {
+        background-color: #E0E0E0;
+    }
+    .buttons a {
+        margin: 5px;
+    }
+    .biggerCarousel {
+        margin-top: 50px;
+        height:50vh;
+        width: 100%;
+        .single-item {
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            .carousel-box-wrapper {
+                width: 100%;
+                height: 50vh;
+                border: none;
+                outline: none;
+                .big-promo-wrapper {
+                    width: 90%;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    .img {
+                        width: 100%;
+                        height: 80%;
+                    }
+                }
+            }
+            
+        }
+    }
+    .smallCarousel {
+        margin-top: 50px;
+        height:50vh;
+        width: 100%;
+        .carousel {
+            width: 80%;
+            margin: 0 auto;
+            .carousel-wrapper {
+                display: flex;
+                flex-grow: 1;
+                outline: none;
+                .box {
+                    width: 90%;
+                    height: 40vh;
+                    background-color: #808080;
+                    margin: 10px;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    .slick-next,.slick-prev {
+        background: black;
+        border-radius: 50%;
+    }
+}
+

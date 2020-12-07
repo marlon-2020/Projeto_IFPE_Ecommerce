@@ -1,0 +1,87 @@
+<body>
+  <header>
+    <nav>
+      <div class="nav-wrapper menu-personal-configs text-black">
+        <a href="/" class="brand-logo logo-bold">Peaky Pay</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li>
+            <form action="/busca" method="GET">
+            <label for="search"><i class="Large material-icons">search</i></label></li>
+            </form>
+          <li>
+            <form action="/busca" method="GET">
+              <input type="text" class="search" name="busca" id="search">
+            </form>
+          </li>
+          <li><a href="/carrinho"><i class="Medium material-icons" id="market">local_grocery_store</i></a></li>
+          <li><sub class="cartSpan"></sub></li>
+          <li><a class="dropdown-trigger" href="#!" data-target="dropdown1"><i class="fas fa-caret-down"
+                id="arrow"></i></a></li>
+        </ul>
+      </div>
+    </nav>
+  
+    <div class="side-products" id="side-list">
+      <div class="action-buttons">
+        <button class="waves-effect waves-light btn-large red darken-3">Cancelar</button>
+        <button class="waves-effect waves-light btn-large light-blue darken-1">Comprar</button>
+      </div>
+    </div>
+  
+    <ul class="sidenav" id="mobile-demo">
+      <li><a href="login.html">Login</a></li>
+      <li><a href="register.html">Register</a></li>
+      <li><a href="collapsible.html">Dark Mode</a></li>
+      <li class="mobile-search-container">
+        <label for="search-m"><i class="Large material-icons">search</i></label>
+        <form action="/busca" method="GET">
+          <input type="text" class="search" name="busca" id="search-m">
+        </form>
+      </li>
+    </ul>
+  
+    <div class="dropdown-arrow" id="dropdown-options">
+      <div class="box">
+        <p class="dark-mode">Dark Mode</p>
+        <div class="switch">
+          <label>
+            Off
+            <input type="checkbox">
+            <span class="lever"></span>
+            On
+          </label>
+        </div>
+      </div>
+      <div class="box">
+        <a href="login.html" class="waves-effect waves-light btn-small green accent-3">Login</a>
+        <a href="register.html" class="waves-effect waves-light btn-small grey darken-1">Register</a>
+      </div>
+    </div>
+  </header>
+  <section class="products" id="products">
+    
+        
+     
+  </section>
+  <div class="total-price">
+    <div class="action-buttons">
+        <p class="painel-valor" style="background-color: brown;border:3px solid red;border-radius:3px;margin-top:1000px;width:auto;height:60px;font-size:30px;"><span class="final-price">Valor total</span></p>
+        <form action="/" method="GET">
+          <button class="waves-effect waves-light btn-large red darken-3">Cancelar</button>
+        </form> 
+        <form action="/fin_comp" method="GET">
+          <button class="waves-effect waves-light btn-large light-blue darken-1">Comprar</button>
+        </form>
+      </div>
+  </div>
+  <script src="./js/menu.js"></script>
+  <script src="./js/script.js"></script>
+  <script src="./js/carrinho.js"></script>
+  <script src="./js/editarCarrinho.js"></script>
+  <script src="./js/comprar.js"></script>
+  <script src="./js/cancelar.js"></script>
+
+
+</body>
+

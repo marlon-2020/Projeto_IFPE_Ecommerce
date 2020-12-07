@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,600;0,700;0,800;1,400&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+body {
+  min-width: 100%;
+  min-height: 100vh;
+}
+
+body .menuBg {
+  background-color: #E0E0E0;
+}
+
+body .buttons a {
+  margin: 5px;
+}
+
+body .biggerCarousel {
+  margin-top: 50px;
+  height: 50vh;
+  width: 100%;
+}
+
+body .biggerCarousel .single-item {
+  width: 80%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .biggerCarousel .single-item .carousel-box-wrapper {
+  width: 100%;
+  height: 50vh;
+  border: none;
+  outline: none;
+}
+
+body .biggerCarousel .single-item .carousel-box-wrapper .big-promo-wrapper {
+  width: 90%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .biggerCarousel .single-item .carousel-box-wrapper .big-promo-wrapper .img {
+  width: 100%;
+  height: 80%;
+}
+
+body .smallCarousel {
+  margin-top: 50px;
+  height: 50vh;
+  width: 100%;
+}
+
+body .smallCarousel .carousel {
+  width: 80%;
+  margin: 0 auto;
+}
+
+body .smallCarousel .carousel .carousel-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  outline: none;
+}
+
+body .smallCarousel .carousel .carousel-wrapper .box {
+  width: 90%;
+  height: 40vh;
+  background-color: #808080;
+  margin: 10px;
+}
+
+body .smallCarousel .carousel .carousel-wrapper .box img {
+  width: 100%;
+  height: 100%;
+}
+
+body .slick-next, body .slick-prev {
+  background: black;
+  border-radius: 50%;
+}
+/*# sourceMappingURL=landing.css.map */
