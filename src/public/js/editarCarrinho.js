@@ -1,7 +1,6 @@
-var muda = localStorage.getItem('produtos')
-if (muda!=null) {
-    muda = muda.replaceAll("],[", ",")
-    var captura = JSON.parse(muda)
+var captura = localStorage.getItem('produtos')
+if (captura!=null) {
+    var captura = JSON.parse(captura)
     $(document).ready(function(){
         if(captura){     
             Object.values(captura).map(item =>{
@@ -15,7 +14,7 @@ if (muda!=null) {
                     `        <sub class="price" style="visibility: hidden;">${item.valor}</sub>`+
                     `        <p class="price">${item.valor}</p>`+
                     `      </div>`+
-                    `      <input class="quant" type="number" value="1" min="0">`+
+                    `      <input class="quant" type="number" value="1" min="1">`+
                     `    </div>`+
                     `    <button class="remove-product" style="background-color:darkred;border:none;border-radius:10px;width:100%;height:30px;">Remover do carrinho</button>`+
                     `   </div>`+
@@ -73,12 +72,13 @@ if (muda!=null) {
             let localValor = $(this).siblings('div').find('sub.price').text()
             let localLink = $(this).siblings('p.product-name').attr('data-type')
             let localProdutos = localStorage.getItem('produtos')
-            localProdutos = localProdutos.replaceAll(`[{"produto":"${localProduto}","valor":${localValor},"link":"${localLink}"}]`,"")
-            localProdutos = localProdutos.replaceAll("],","]").replaceAll(",[","[").replaceAll(",,","")
-            localProdutos = localProdutos.replaceAll("][", "],[")
-            localStorage.setItem('produtos',localProdutos)
+            localProdutos = JSON.parse(localProdutos)
+            localProdutos = localProdutos.filter(function( obj ) {
+                return obj.produto !== `${localProduto}`;
+            });
+            localStorage.setItem('produtos',JSON.stringify(localProdutos))
             let checar = localStorage.getItem('produtos')
-            if (checar == "") {
+            if (checar == "[]") {
                 localStorage.removeItem('produtos')
                 $('.final-price').text(0)
                 $('.darken-3').click()

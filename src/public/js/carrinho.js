@@ -1,4 +1,4 @@
-let produtos = { produto: "", valor: 0, link: "" }
+let produtos = []
 
 $(document).ready(function () {
     $(".darken-2").click(function () {
@@ -9,8 +9,6 @@ $(document).ready(function () {
             localStorage.setItem(`${produto}`, `${valor}`)
             alert("Produto foi colocado no carrinho!")
             var imagem = $(this).parentsUntil(".card").siblings().attr('src');
-            console.log(imagem)
-
             itemsCarrinho(produto, valor, imagem);
         }else{
             alert("Produto já está no carrinho!")
@@ -28,7 +26,8 @@ function itemsCarrinho(produto, valor, imagem) {
         localStorage.setItem('itemsCarrinho', 1)
         document.querySelector('.cartSpan').textContent = 1
     }
-    armazenaLocal(produto, valor, imagem);
+    produtos.push({produto: produto, valor: valor, link: imagem})
+    localStorage.setItem('produtos', JSON.stringify(produtos))
 }
 /*function armazenaLocal(produto, valor, imagem){
     let temCarrinho = localStorage.getItem(`${produto}`)        
@@ -44,24 +43,21 @@ function itemsCarrinho(produto, valor, imagem) {
     }    
 
 }*/
-function armazenaLocal(produto, valor, imagem) {
-
+/*function armazenaLocal(produto, valor, imagem) {
+    
     let temCarrinho = localStorage.getItem('produtos');
     console.log(produtos)
     if (temCarrinho == null) {
-        produtos.produto = produto
-        produtos.valor = valor
-        produtos.link = imagem
-        localStorage.setItem('produtos', "[" + JSON.stringify(produtos) + "]")
+        var objProdutos = {nomeProduto: produto, valor: valor, link: imagem} 
+        console.log(objProdutos)   
+        localStorage.setItem('produtos', JSON.stringify(objProdutos))
     } else {
-        produtos.produto = produto
-        produtos.valor = valor
-        produtos.link = imagem
+        var objProdutos = {nomeProduto: produto, valor: valor, link: imagem} 
         var guardaProd = localStorage.getItem('produtos')
-        localStorage.setItem('produtos', guardaProd + "," + "[" + JSON.stringify(produtos) + "]")
+        localStorage.setItem('produtos', guardaProd + JSON.stringify(produtos))
     }
     console.log(produtos)
-}
+}*/
 function carregaCarrinho() {
     let todosItems = localStorage.getItem('itemsCarrinho')
     marcador = localStorage.getItem('marcador')
