@@ -1,88 +1,108 @@
-<body>
-  <header>
-    <nav>
-      <div class="nav-wrapper menu-personal-configs text-black">
-        <a href="/" class="brand-logo logo-bold">Peaky Pay</a>
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-        <ul class="right hide-on-med-and-down">
-          <li>
-            <form action="/busca" method="GET">
-            <label for="search"><i class="Large material-icons">search</i></label></li>
-            </form>
-          <li>
-            <form action="/busca" method="GET">
-              <input type="text" class="search" name="busca" id="search">
-            </form>
-          </li>
-          <li><a href="/carrinho"><i class="Medium material-icons" id="market">local_grocery_store</i></a></li>
-          <li><sub class="cartSpan"></sub></li>
-          <li><a class="dropdown-trigger" href="#!" data-target="dropdown1"><i class="fas fa-caret-down"
-                id="arrow"></i></a></li>
-        </ul>
+<header>
+  <nav>
+    <div class="nav-wrapper menu-personal-configs text-black">
+      <a href="/" class="brand-logo logo-bold">Peaky Pay</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li>
+          <label for="search"><i class="Large material-icons">search</i></label>
+        </li>
+        <li>
+          <form action="/busca" method="GET">
+            <input type="text" class="search" name="busca" id="search">
+          </form>
+        </li>
+        <li style="display: flex; no-wrap">
+          <a href="/carrinho"><i class="Medium material-icons" id="market">local_grocery_store</i></a>
+          <span style="margin-left: -25px"><a href="/carrinho">{{totalQnt}}</a></span>
+        </li>
+        <li>
+        </li>
+        <li><a class="dropdown-trigger" href="#!" data-target="dropdown1"><i class="fas fa-caret-down"
+              id="arrow"></i></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="/login">Login</a></li>
+    <li><a href="/register">Register</a></li>
+    <li class="mobile-search-container">
+      <label for="search-m"><i class="Large material-icons">search</i></label>
+      <input type="text" class="search" name="Pesquisa" id="search-m">
+    </li>
+  </ul>
+
+  <div class="dropdown-arrow" id="dropdown-options">
+    <div class="box">
+      <a href="/login" class="waves-effect waves-light btn-small green accent-3">Login</a>
+      <a href="/register" class="waves-effect waves-light btn-small grey darken-1">Register</a>
+    </div>
+  </div>
+</header>
+<section class="products" id="products">
+  {{#each produtos}}
+  {{#if estoque}}
+  <div class="card" id="card">
+    <img class="picture-product" src="{{imagem}}" alt="{{nomeProduto}}" width="120px" height="180px"
+      style="border: solid;border-radius: 3px;">
+    <div class="buy">
+      <p class="product-name">{{nomeProduto}}</p>
+      <div class="white-bg-price">
+        <p class="priceO" style="background-color: darkgray;">{{#if valorOri}}De R$ {{valorOri}}{{/if}}</p>
+        <p class="price">Por R$ {{valor}}</p>
       </div>
-    </nav>
-  
-    <div class="side-products" id="side-list">
-      <div class="action-buttons">
-        <button class="waves-effect waves-light btn-large red darken-3">Cancelar</button>
-        <button class="waves-effect waves-light btn-large light-blue darken-1">Comprar</button>
+      <div class="botton-card">
+        <a href="/add-carrinho/{{id}}" style="margin-right: 14px;"
+          class="waves-effect waves-light btn-small  green accent-3 btn-center"><i
+            class="material-icons">add_shopping_cart</i>Adicionar</a>
+        <!-- Modal Trigger -->
+        <a class="waves-effect waves-light btn btn-small  green accent-3 btn-center modal-trigger"
+          href="#modal{{id}}">Visualizar</a>
       </div>
     </div>
-  
-    <ul class="sidenav" id="mobile-demo">
-      <li><a href="login.html">Login</a></li>
-      <li><a href="register.html">Register</a></li>
-      <li><a href="collapsible.html">Dark Mode</a></li>
-      <li class="mobile-search-container">
-        <label for="search-m"><i class="Large material-icons">search</i></label>
-        <form action="/busca" method="GET">
-          <input type="text" class="search" name="busca" id="search-m">
-        </form>
-      </li>
-    </ul>
-  
-    <div class="dropdown-arrow" id="dropdown-options">
-      <div class="box">
-        <p class="dark-mode">Dark Mode</p>
-        <div class="switch">
-          <label>
-            Off
-            <input type="checkbox">
-            <span class="lever"></span>
-            On
-          </label>
-        </div>
-      </div>
-      <div class="box">
-        <a href="login.html" class="waves-effect waves-light btn-small green accent-3">Login</a>
-        <a href="register.html" class="waves-effect waves-light btn-small grey darken-1">Register</a>
-      </div>
-    </div>
-  </header>
-  <section class="products" id="products">
-    {{#each produtos}}
-      {{#if estoque}}
-        <div class="card" id="card">
-          <img class="picture-product" src="{{imagem}}" alt="{{nomeProduto}}" width="120px" height="180px" style="border: solid;border-radius: 3px;">
-          <div class="buy">
-            <p class="product-name">{{nomeProduto}}</p>
-            <div class="botton-card">
-              <button class="waves-effect waves-light btn-small  red darken-2 btn-center"><i class="material-icons">add_shopping_cart</i></button>
-              <div class="white-bg-price">
-                <p class="priceO" style="background-color: darkgray;">{{#if valorOri}}De: {{valorOri}}{{/if}}</p>
-                <p class="price">Por: R$ {{valor}}</p>
-              </div>
-            </div>
+    <i class="material-icons small">expand_less</i>
+    <!-- Modal Structure -->
+    <div id="modal{{id}}" class="modal" tabindex="0"
+      style="z-index: 1003; display: none; opacity: 0; top: 4%; transform: scaleX(0.8) scaleY(0.8);">
+      <div class="modal-content">
+        <a class="modal-close right">
+          <i class="material-icons">close</i>
+        </a>
+        <div class="row" id="product-five">
+          <div class="col m6 s12">
+            <img class="responsive-img" src="{{imagem}}" alt="{{nomeProduto}}">
           </div>
-          <i class="material-icons small">expand_less</i>
+          <div class="col m6 s12">
+            <p>{{categoria}}</p>
+            <h5>{{nomeProduto}}</h5>
+            <span class="new badge left ml-0 mr-2" data-badge-caption>4.2 Star</span>
+            <p>Disponível: <span class="green-text">Disponível</span></p>
+            <hr class="mb5">
+            <span class="vertical-align-top mr4">
+              <i class="material-icons mr-3">favorite_border</i>Lista de Desejos
+            </span>
+            <h5>{{valor}}</h5>
+            <a class="waves-effect waves-light btn mt-2">Adicionar à sacola</a>
+            <a class="waves-effect waves-light btn mt-2">Comprar agora</a>
+          </div>
         </div>
-      {{/if}}
-    {{/each}}
-  </section>
-
-  <script src="./js/menu.js"></script>
-  <script src="./js/script.js"></script>
-  <script src="./js/carrinho.js"></script>
-
-</body>
-
+      </div>
+    </div>
+  </div>
+  {{/if}}
+  {{/each}}
+</section>
+{{#if message_error}}
+<script>
+  M.toast({ html: `{{message_error}}`, classes: "e57373 red lighten-2" })
+</script>
+{{/if}}
+{{#if message_sucess}}
+<script>
+  M.toast({ html: `{{message_sucess}}`, classes: "81c784 green lighten-2" })
+</script>
+{{/if}}
+<script src="/js/menu.js"></script>
+<script src="/js/script.js"></script>
+<script src="/js/carrinho.js"></script>

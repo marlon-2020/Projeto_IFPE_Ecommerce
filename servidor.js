@@ -1,31 +1,36 @@
-const express = require('express');
-const bodyParser = require('body-parser');
+const express = require("express");
+const path = require("path");
+const cookieParser = require("cookie-parser");
+const bodyParser = require("body-parser");
+const handlebars = require("express-handlebars");
+
+const routes = require(`./src/routes/routes`);
+
 const app = express();
-const path = require('path');
 
+require("./src/db/db");
 
-app.use(express.static('public'));
+// template engine config
+app.set("view engine", "handlebars");
+app.engine(
+  "handlebars",
+  handlebars({
+    defaultLayout: "main",
+    runtimeOptions: {
+      allowProtoPropertiesByDefault: true,
+      allowProtoMethodsByDefault: true,
+    },
+  })
+);
+
 app.use(bodyParser.json());
-app.use(bodyParser.text());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname+"/src", 'public')));
+app.use(cookieParser());
+app.use("/", express.static(path.join(__dirname + "/src", "public")));
 
+app.use("/", routes);
 
 const port = 3000;
-const handlebars  = require('express-handlebars'); 
-const routes = require('../Servidor/src/routes/routes');
-
-
-app.engine('handlebars', handlebars({defaultLayout:'main',
-                                        runtimeOptions: {
-                                            allowProtoPropertiesByDefault: true,
-                                            allowProtoMethodsByDefault: true,
-                                        }
-                                    }));
-app.set('view engine', 'handlebars');
-
-app.use('/', routes);
-
 app.listen(port, () => {
-    console.log(`Servidor está ativo na porta ${port}`)
-})
+  console.log(`Servidor está ativo na porta ${port}`);
+});

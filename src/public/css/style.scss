@@ -1,209 +1,171 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,600;0,700;0,800;1,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,600;0,700;0,800;1,400&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Nunito Sans', sans-serif;
-    color: #ffff !important;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito Sans", sans-serif;
+  color: #ffff !important;
 }
 
 body {
-    background-color: #121212;
+  background-color: #eef0f1;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  header {
     display: flex;
-    min-height: 100vh;
     flex-direction: column;
-    header {
+  }
+  .menu-personal-configs {
+    background-color: #1f1f1f;
+    padding: 0px 10px;
+    box-shadow: 0px;
+    a {
+      color: black;
+    }
+    .logo-bold {
+      font-weight: 700;
+    }
+
+    .search {
+      border: none;
+      background-color: #121212;
+      border-radius: 25px;
+      padding-left: 9px;
+      height: 35px;
+      &:focus {
+        border: 2px solid #808080 !important;
+        box-shadow: none;
+      }
+    }
+  }
+
+  #mobile-demo {
+    background-color: #1f1f1f !important;
+  }
+
+  .dropdown-arrow {
+    width: 200px;
+    height: 150px;
+    background-color: #121212;
+    position: absolute;
+    align-self: flex-end;
+    margin-top: 65px;
+    display: none;
+    opacity: 0;
+    z-index: 22222;
+    .box {
+      width: 100%;
+      height: 50%;
+      display: flex;
+      flex-direction: column;
+      place-content: center;
+      align-items: center;
+      &:nth-child(2) {
         display: flex;
-    flex-direction: column;
+        flex-direction: row;
+      }
+      button {
+        margin: 1px;
+      }
     }
-    .menu-personal-configs {
-        background-color: #1f1f1f;
-        padding: 0px 10px;
-        box-shadow: 0px;
-         a {
-            color: black;
-         }
-         .logo-bold {
-             font-weight: 700;
-         }
+  }
 
-         .search {
-             border: none;
-             background-color: #121212;
-             border-radius: 25px;
-             padding-left: 9px;
-             height: 35px;
-             &:focus {
-                border: 2px solid #808080 !important;
-                box-shadow: none;
-             }
-         }
-    }
+  .on {
+    display: block;
+    opacity: 1;
+  }
 
-    #mobile-demo {
-        background-color:#1f1f1f !important;
-    }
-
-    .dropdown-arrow {
-        width: 200px;
-        height: 150px;
-        background-color: #1f1f1f;
-        position: absolute;
-        align-self: flex-end;
-        margin-top: 65px;
-        display: none;
-        opacity: 0;
-        z-index: 22222;
-        .box {
-            width: 100%;
-            height: 50%;
-            display: flex;
-            flex-direction: column;
-            place-content: center;
-            align-items: center;
-            &:nth-child(2) {
-                display: flex;
-                flex-direction: row;
-            }
-            button {
-                margin: 1px;
-            }
-            
-        }
-    }
-
+  @media (max-width: 992px) {
     .on {
-        display: block;
-        opacity: 1;
+      display: none;
     }
-    .side-products {
-        background-color: #1f1f1f;
-        width: 20em;
-        height: 92vh;
-        align-self: flex-end;
+  }
+
+  .products {
+    width: 100%;
+    height: 93vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .card {
+      width: 17em;
+      height: 300px;
+      background: #121212;
+      margin: 15px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.5s;
+      &:hover .buy {
+        display: block;
+      }
+
+      &:hover {
+        height: 440px;
+        transition: all 0.5s;
+      }
+      img {
+        width: 17.05em;
+        transition: all 0.5s;
+        z-index: 1;
+      }
+
+      .product-name {
+        font-size: 1.5em;
+        position: relative;
+        margin: auto;
+      }
+      .white-bg-price {
+        margin: auto;
+        background-color: white;
+        .older-price {
+          color: white;
+          font-size: 1em;
+          padding: 5px;
+          background-color: #808080;
+        }
+        .price {
+          font-size: 1.2em;
+          color: black !important;
+          text-align: center;
+          padding: 10px;
+        }
+      }
+
+      .buy {
         display: none;
         position: absolute;
-        transition: all .3s;
-        top: 65px;
-        z-index: 22222;
-        overflow: scroll;
-        .action-buttons {
-            display: flex;
-            flex-direction: column;
-            padding: 10px;
-            margin-top: 195%;
-            button {
-                margin: 3px;
-            }
+        bottom: 30px;
+        .botton-card {
+          display: flex;
         }
+      }
     }
+  }
 
-    .view {
-        display: block;
-    }
-
-    @media (max-width: 992px) {
-        .view, .on {
-            display: none;
+  .sidenav {
+    .mobile-search-container {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      .search {
+        border: none;
+        background-color: #121212;
+        border-radius: 25px;
+        padding-left: 2px;
+        height: 30px;
+        width: 65%;
+        padding-left: 10%;
+        padding-right: 10%;
+        &:focus {
+          border: 2px solid #808080 !important;
+          box-shadow: none;
         }
-
+      }
     }
-
-    .products {
-        width: 100%;
-        height: 93vh;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        .card {
-            width: 17em;
-            height: 40vh;
-            background-color: #1f1f1f;
-            margin: 15px;
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: all .5s;
-            &:hover .buy {
-                display: block;
-            }
-
-            &:hover {
-                height: 50vh;
-                transition: all .5s;
-            }
-            img {
-                width: 17.05em;
-                transition: all .5s;
-                z-index: 1;
-            }
-
-            .product-name {
-                font-size: 1.5em;
-                position: relative;
-                margin: auto;
-            }
-            .white-bg-price {
-                margin: auto;
-                background-color: #ffff;
-                border-radius: 15px;
-                .price {
-                    font-size: 1.2em; 
-                    color: black !important;
-                    text-align: center;
-                    padding: 10px;
-                }
-            }
-            
-
-            .buy {
-                display: none;
-                position: absolute;
-                bottom: 30px;
-                .botton-card {
-                    display: flex;
-                }
-            }
-        }
-    }
-
-    .sidenav {
-        .mobile-search-container {
-            width: 100%;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            .search {
-                border: none;
-                 background-color: #121212;
-                 border-radius: 25px;
-                 padding-left: 2px;
-                 height: 30px;
-                 width: 65%;
-                 padding-left: 10%;
-                 padding-right: 10%;
-                 &:focus {
-                    border: 2px solid #808080 !important;
-                    box-shadow: none;
-                 }
-            }
-        }
-    }
-
+  }
 }
-
-@media screen and (max-width:1024px){
-    #card {
-        height: 50vh;
-        &:hover {
-            height: 65vh;
-        }
-    }
-    
-}
-
-
-
-

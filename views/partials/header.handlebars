@@ -1,0 +1,38 @@
+<header>
+  <nav>
+    <div class="nav-wrapper menu-personal-configs text-black">
+      <a href="/" class="brand-logo logo-bold">Peaky Pay</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li>
+          <label for="search"><i class="Large material-icons">search</i></label>
+        </li>
+
+        <li>
+          <form action="/busca" method="GET">
+            <input type="text" class="search" name="busca" id="search">
+          </form>
+        </li>
+        <li><a href="/carrinho"><i class="Medium material-icons" id="market">local_grocery_store</i></a></li>
+        <li><a class="dropdown-trigger" href="#!" data-target="dropdown1"><i class="fas fa-caret-down"
+              id="arrow"></i></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="/login">Login</a></li>
+    <li><a href="/register">Register</a></li>
+    <li class="mobile-search-container">
+      <label for="search-m"><i class="Large material-icons">search</i></label>
+      <input type="text" class="search" name="Pesquisa" id="search-m">
+    </li>
+  </ul>
+
+  <div class="dropdown-arrow" id="dropdown-options">
+    <div class="box">
+      <a href="/login" class="waves-effect waves-light btn-small green accent-3">Login</a>
+      <a href="/register" class="waves-effect waves-light btn-small grey darken-1">Register</a>
+    </div>
+  </div>
+</header>

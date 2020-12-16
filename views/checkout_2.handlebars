@@ -1,0 +1,57 @@
+<form action="/process_payment" method="post" id="pay" name="pay">
+  <fieldset>
+    <ul>
+      <li>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" value="test_user_19653727@test.com" placeholder="Digite seu email" />
+      </li>
+      <li>
+        <label for="cardNumber">Número do Cartão de Crédito:</label>
+        <input type="text" id="cardNumber" data-checkout="cardNumber" placeholder="4509 9535 6623 3704"
+          onselectstart="return false" onpaste="return false" onCopy="return false" onCut="return false"
+          onDrag="return false" onDrop="return false" autocomplete=off value="4235647728025682" />
+          <div class="brand"></div>
+      </li>
+      <li>
+        <label for="securityCode">Código de segurança:</label>
+        <input type="text" id="securityCode" data-checkout="securityCode" placeholder="123" onselectstart="return false"
+          onpaste="return false" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false"
+          autocomplete=off />
+      </li>
+      <li>
+        <label for="cardExpirationMonth">Mês de validade:</label>
+        <input type="text" id="cardExpirationMonth" data-checkout="cardExpirationMonth" placeholder="11"
+          onselectstart="return false" onpaste="return false" onCopy="return false" onCut="return false"
+          onDrag="return false" onDrop="return false" autocomplete=off />
+      </li>
+      <li>
+        <label for="cardExpirationYear">Ano de expiração:</label>
+        <input type="text" id="cardExpirationYear" data-checkout="cardExpirationYear" placeholder="2025"
+          onselectstart="return false" onpaste="return false" onCopy="return false" onCut="return false"
+          onDrag="return false" onDrop="return false" autocomplete=off />
+      </li>
+      <li>
+        <label for="cardholderName">Nome do Titular:</label>
+        <input type="text" id="cardholderName" data-checkout="cardholderName" placeholder="Digite seu nome" />
+      </li>
+      <li>
+        <label for="docType">Tipo de documento:</label>
+        <select id="docType" data-checkout="docType"></select>
+      </li>
+      <li>
+        <label for="docNumber">Número do documento:</label>
+        <input type="text" id="docNumber" data-checkout="docNumber" placeholder="19119119100" />
+      </li>
+      <li>
+        <label for="installments">Parcelas:</label>
+        <select id="installments" class="form-control" name="installments"></select>
+      </li>
+    </ul>
+    <input type="hidden" name="amount" id="amount" value="1200"/>
+    <input type="hidden" name="description" />
+    <input type="hidden" name="paymentMethodId" />
+    <input type="submit" value="Pay!" />
+  </fieldset>
+</form>
+<script src="https://secure.mlstatic.com/sdk/javascript/v1/mercadopago.js"></script>
+<script src="/js/checkout.js"></script>

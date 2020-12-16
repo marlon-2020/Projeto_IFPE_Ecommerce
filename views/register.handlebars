@@ -1,0 +1,33 @@
+<form action="/users" method="post">
+  <h1>Cadastre-se</h1>
+  <p>
+    <input type="text" name="nome" class="user" value="{{nome}}" placeholder="Digite o seu nome" required />
+  </p>
+  <p>
+    <input type="email" name="email" class="user" value="{{email}}" placeholder="Digite o seu e-mail" required />
+  </p>
+  <p>
+    <input oninput="{mascara(this)}" type="text" name="cpf" class="user" value="{{cpf}}" placeholder="Digite seu CPF" minlength="14"
+      required />
+  </p>
+  <p>
+    <input type="password" id="password" name="password" class="password" placeholder="Digite a sua senha" re />
+  </p>
+  <p>
+    <input type="password" id="confirm_password" class="password" placeholder="Digite novamente a sua senha" required />
+  </p>
+  <p>
+    <button type="submit">Criar Conta</button>
+  </p>
+</form>
+{{#if message_error}}
+<script>
+  M.toast({ html: `{{message_error}}`, classes: "e57373 red lighten-2" })
+</script>
+{{/if}}
+{{#if message_sucess}}
+<script>
+  M.toast({ html: `{{message_sucess}}`, classes: "81c784 green lighten-2" })
+</script>
+{{/if}}
+<script src="/js/register.js"></script>

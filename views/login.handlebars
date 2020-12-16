@@ -1,0 +1,25 @@
+<form action="/sessions" method="post">
+  <h1>Login</h1>
+  <p>
+    <input type="text" name="email" class="email" placeholder="Digite o seu e-mail" required>
+  </p>
+  <p>
+    <input type="password" name="password" class="password" placeholder="Digite a sua senha" required>
+  </p>
+  <p>
+    <button type="submit">Entrar</button>
+  </p>
+  <div>
+    <a href="#">Esqueceu a sua senha?</a> <a href="#">Crie sua conta</a>
+  </div>
+</form>
+{{#if message_error}}
+<script>
+  M.toast({ html: `{{message_error}}`, classes: "e57373 red lighten-2" })
+</script>
+{{/if}}
+{{#if message_sucess}}
+<script>
+  M.toast({ html: `{{message_sucess}}`, classes: "81c784 green lighten-2" })
+</script>
+{{/if}}
