@@ -1,0 +1,20 @@
+@media screen and (max-width:855px){
+    header .container{
+        display:flex;
+        flex-direction:column;
+    }
+    
+}
+@media screen and (max-width:625px){
+    main .btn-main{
+        margin-left:10%;
+        margin-top:5px;
+        width:80%;
+    }
+}
+
+@media screen and (min-width:625px){
+    .about{
+        width:50%;
+    }
+}
